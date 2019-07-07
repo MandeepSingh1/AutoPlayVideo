@@ -7,22 +7,13 @@
 //
 
 import UIKit
-import AVFoundation
-import AVKit
+
 
 class CollectionViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
 
-    //MARK:- Variables
-    lazy var videoPlayer : XpPlayerLayer? = {
-        let l = XpPlayerLayer()
-        l.cacheType = .memory(count: 20)
-        l.coverFitType = .fitToVideoRect
-        l.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        return l
-    }()
-    
+    //MARK:- View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,12 +51,12 @@ class CollectionViewController: UIViewController {
 
 extension CollectionViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return DemoSource.shared.demoData.count
+        return ModelObject.shared.demoData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as? CollectionCell {
-            let image = DemoSource.shared.demoData[indexPath.row].image
+            let image = ModelObject.shared.demoData[indexPath.row].image
             cell.cellImageView.dowloadFromServer(link: image ?? "")
             return cell
         }
@@ -111,15 +102,15 @@ extension CollectionViewController {
         
         if let cell = self.collectionView.cellForItem(at: indexPath) as? CollectionCell {
             // this thumb use when transition start and your video dosent start
-            let postModel = DemoSource.shared.demoData[indexPath.row]
-            self.videoPlayer?.playView = cell.cellImageView
-            self.videoPlayer?.thumbImageView.contentMode = cell.cellImageView.contentMode
+            let postModel = ModelObject.shared.demoData[indexPath.row]
+            ModelObject.shared.videoPlayer?.playView = cell.cellImageView
+            ModelObject.shared.videoPlayer?.thumbImageView.contentMode = cell.cellImageView.contentMode
             //This means it contains video and text is not compulsory.
             if postModel.videoType == 1 {
                 
                 if let videoURL = URL(string: postModel.url ?? "") {
-                    self.videoPlayer?.isStopPlayer = false
-                    self.videoPlayer?.set(url: videoURL, state: { (status) in
+                    ModelObject.shared.videoPlayer?.isStopPlayer = false
+                    ModelObject.shared.videoPlayer?.set(url: videoURL, state: { (status) in
                         switch status {
                         case .playing: break
                         case .failed(err: _): break
@@ -135,7 +126,7 @@ extension CollectionViewController {
     
     func destroyMMPlayerInstance() {
         
-        if let xpPlayer = self.videoPlayer, xpPlayer.playView != nil {
+        if let xpPlayer = ModelObject.shared.videoPlayer, xpPlayer.playView != nil {
             xpPlayer.isStopPlayer = true
             xpPlayer.playView = nil
         }
@@ -146,7 +137,7 @@ extension CollectionViewController {
             return
         }
         // start loading video
-        self.videoPlayer?.startLoading()
+        ModelObject.shared.videoPlayer?.startLoading()
     }
     
 }

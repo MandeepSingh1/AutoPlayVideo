@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import AVFoundation
+import AVKit
 
 struct DataSourceModel {
     
@@ -15,9 +17,18 @@ struct DataSourceModel {
     var image: String?
 }
 
-class DemoSource: NSObject {
-    static let shared = DemoSource()
+class ModelObject: NSObject {
+    
+    static let shared = ModelObject()
     var demoData = [DataSourceModel]()
+    
+    lazy var videoPlayer : XpPlayerLayer? = {
+        let l = XpPlayerLayer()
+        l.cacheType = .memory(count: 20)
+        l.coverFitType = .fitToVideoRect
+        l.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        return l
+    }()
     
     override init() {
         demoData += [
