@@ -27,6 +27,9 @@
 		90802FD022D1D5EF00FEAC3E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90802FCF22D1D5EF00FEAC3E /* Extension.swift */; };
 		90802FD422D1EBE000FEAC3E /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90802FD222D1EBE000FEAC3E /* CollectionCell.swift */; };
 		90802FD522D1EBE000FEAC3E /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90802FD322D1EBE000FEAC3E /* CollectionCell.xib */; };
+		90BEBA2022D31D7B00C17237 /* CollectionViewWithNestedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BEBA1F22D31D7B00C17237 /* CollectionViewWithNestedController.swift */; };
+		90BEBA2322D31E1300C17237 /* NestedCellWithCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BEBA2122D31E1300C17237 /* NestedCellWithCollectionView.swift */; };
+		90BEBA2422D31E1300C17237 /* NestedCellWithCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90BEBA2222D31E1300C17237 /* NestedCellWithCollectionView.xib */; };
 		99B3061EE186E46152741961 /* Pods_VideoPlayerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF6775BFDA60E29E2B09EBA8 /* Pods_VideoPlayerUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +80,9 @@
 		90802FCF22D1D5EF00FEAC3E /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		90802FD222D1EBE000FEAC3E /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		90802FD322D1EBE000FEAC3E /* CollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
+		90BEBA1F22D31D7B00C17237 /* CollectionViewWithNestedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewWithNestedController.swift; sourceTree = "<group>"; };
+		90BEBA2122D31E1300C17237 /* NestedCellWithCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedCellWithCollectionView.swift; sourceTree = "<group>"; };
+		90BEBA2222D31E1300C17237 /* NestedCellWithCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NestedCellWithCollectionView.xib; sourceTree = "<group>"; };
 		9FA3DDFF9DD2E4498FE8CD1C /* Pods-VideoPlayerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoPlayerUITests.release.xcconfig"; path = "Target Support Files/Pods-VideoPlayerUITests/Pods-VideoPlayerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AA057120559142337B3232F9 /* Pods-VideoPlayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoPlayerUITests.debug.xcconfig"; path = "Target Support Files/Pods-VideoPlayerUITests/Pods-VideoPlayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF6775BFDA60E29E2B09EBA8 /* Pods_VideoPlayerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoPlayerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +160,7 @@
 				906C826C22D084860090A07F /* Model.swift */,
 				906C826522D07E390090A07F /* CollectionViewController.swift */,
 				906C823922D07D930090A07F /* TableViewController.swift */,
+				90BEBA1F22D31D7B00C17237 /* CollectionViewWithNestedController.swift */,
 				906C823B22D07D930090A07F /* Main.storyboard */,
 				906C823E22D07D940090A07F /* Assets.xcassets */,
 				906C824022D07D940090A07F /* LaunchScreen.storyboard */,
@@ -203,6 +210,8 @@
 		90802FD122D1EBBA00FEAC3E /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				90BEBA2122D31E1300C17237 /* NestedCellWithCollectionView.swift */,
+				90BEBA2222D31E1300C17237 /* NestedCellWithCollectionView.xib */,
 				90802FD222D1EBE000FEAC3E /* CollectionCell.swift */,
 				90802FD322D1EBE000FEAC3E /* CollectionCell.xib */,
 			);
@@ -331,6 +340,7 @@
 			files = (
 				90802FD522D1EBE000FEAC3E /* CollectionCell.xib in Resources */,
 				906C826A22D081FD0090A07F /* TableViewCellView.xib in Resources */,
+				90BEBA2422D31E1300C17237 /* NestedCellWithCollectionView.xib in Resources */,
 				906C824222D07D940090A07F /* LaunchScreen.storyboard in Resources */,
 				906C823F22D07D940090A07F /* Assets.xcassets in Resources */,
 				906C823D22D07D930090A07F /* Main.storyboard in Resources */,
@@ -432,6 +442,8 @@
 				906C826D22D084860090A07F /* Model.swift in Sources */,
 				906C826B22D081FD0090A07F /* TableViewCellView.swift in Sources */,
 				906C826622D07E390090A07F /* CollectionViewController.swift in Sources */,
+				90BEBA2022D31D7B00C17237 /* CollectionViewWithNestedController.swift in Sources */,
+				90BEBA2322D31E1300C17237 /* NestedCellWithCollectionView.swift in Sources */,
 				90802FD022D1D5EF00FEAC3E /* Extension.swift in Sources */,
 				906C823A22D07D930090A07F /* TableViewController.swift in Sources */,
 				906C823822D07D930090A07F /* AppDelegate.swift in Sources */,

@@ -15,5 +15,9 @@ class CollectionCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    deinit {
+        print("deinit collectionviw cell")
+    }
 
 }

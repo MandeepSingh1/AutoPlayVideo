@@ -34,7 +34,19 @@ class TableViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        self.stopIt(isStart: true)
         self.tableView.safeRemove(observer: self, forKeyPath: "contentOffset")
+    }
+    
+    //MARK:- viewWillDisappear
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.stopIt(isStart: true)
+    }
+    
+    private func stopIt(isStart:Bool) {
+        guard let player = ModelObject.shared.videoPlayer else { return }
+        player.isStopPlayer = isStart
     }
 }
 
