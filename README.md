@@ -4,5 +4,6 @@ I have included the images and videos in the tableview && collectionview like in
 
 ## InitialController
 In this controller, you can choose type of videos to be played:- TableView, CollectionView, CollectionViewCell Inside the CollectionView
+
 <img src="https://user-images.githubusercontent.com/11526089/60808389-cd723300-a1a5-11e9-87a6-7c8efbf679aa.jpeg" width="320" height="700">
 
